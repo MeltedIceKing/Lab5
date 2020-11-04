@@ -1,0 +1,39 @@
+body {
+    background-color: beige;
+}
+.link{
+    background-color: lightblue;
+    text-align: center;
+}
+.courselink{
+    list-style-type: none;
+    display: inline;
+    text-indent: 20px;
+}
+.courseline{
+  display: inline;
+  text-indent: 10px;
+}
+.coursemain{
+  display: grid;
+}
+.coursesection{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  height: 70px;
+}
+@media screen and (max-width: 960px){
+  .coursesection{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100px;
+  }
+  .coursesection > .area3{
+    grid-row: 2 / 3;
+  }
+  .courselink{
+    display: block;
+  }
+}
