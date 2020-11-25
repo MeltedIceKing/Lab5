@@ -14,10 +14,11 @@ const list_of_courses = [
 
 let user_input = prompt("Please enter a 4 digit number");
 
-if (user_input == null){
-    user_input = prompt("Please enter a valid input for a 4 digit number");
-}else if (user_input == ''){
-    user_input = prompt("Please enter a valid input for a 4 digit number");
+while (user_input.length !== 4){
+    user_input = prompt("Please enter a  valid 4 digit number");
+    while (user_input == ''){
+        user_input = prompt("Please enter a  valid 4 digit number");
+    }
 }
 
 var length_of_courses = list_of_courses.length;
