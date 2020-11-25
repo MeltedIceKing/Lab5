@@ -25,10 +25,12 @@ console.log(length_of_courses)
 
 for(var i = 0; i < length_of_courses; i++) {
     course_key_number = list_of_courses[i].class_key
+    console.log(course_key_number)
     initial_boolean = false
 
     if (user_input == course_key_number) {
         console.log("Yes I am taking the course: " + list_of_courses[i].code + " " + list_of_courses[i].name);
+        break;
     }else if (user_input !== course_key_number) {
         initial_boolean = true
     }
@@ -43,5 +45,3 @@ if (initial_boolean === true) {
     console.log(list_of_courses)
     console.log("Succesfully added new course")
 }
-
-
