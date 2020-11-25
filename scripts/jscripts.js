@@ -26,3 +26,13 @@ for(var i = 0; i < length_of_courses; i++) {
         initial_boolean = true;
     }
 }
+
+if (initial_boolean === true) {
+    list_of_courses.push({
+        code: user_input,
+        name: null,
+        key: parseInt(user_input)
+    })
+    console.log(list_of_courses)
+    console.log("Succesfully added new course")
+}
