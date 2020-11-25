@@ -6,3 +6,9 @@ const list_of_courses = [
     {code: "ORGB 1110",
     name: "Introduction to System Administration"},
 ]
+
+let user_input = prompt("Please enter a 4 digit number: ");
+
+if (user_input == null){
+    user_input = prompt("Please enter a valid input for a 4 digit number")
+}
