@@ -3,9 +3,11 @@ const list_of_courses = [
     name: "Fundamental Web Techonologies",
     key: 1620},
     {code: "COMM 1116",
-    name: "Business Communication"},
+    name: "Business Communication",
+    key: 1116},
     {code: "ORGB 1110",
-    name: "Organizational Behavior"},
+    name: "Organizational Behavior",
+    key: 1110},
 ]
 
 let user_input = prompt("Please enter a 4 digit number: ");
