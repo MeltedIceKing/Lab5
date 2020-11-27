@@ -2,11 +2,11 @@ let createCourseArray = () => {
     let dictOfCourses = [];
 
     let coursesList = document.getElementsByClassName("coursename")
-    console.log(coursesList)
     let datesList = document.getElementsByClassName('schoolyear')
 
     for (let i = 0; i < coursesList.length; i++) {
         let codeList = coursesList[i].innerHTML;
+        console.log(codeList)
         let dateList = datesList[i].innerHTML;
         dictOfCourses.push(
             {
@@ -14,8 +14,8 @@ let createCourseArray = () => {
                 date: dateList,
             }
         )
-    return dictOfCourses;
     }
+    return dictOfCourses;
 }
 
 let courseList = createCourseArray()
