@@ -1,14 +1,20 @@
-const list_of_courses = []
+let createCourseArray = () => {
+    let dictOfCourses = [];
 
-let createCourseArray  = function(courseCode, courseDate){
-    list_of_courses.push(
-        {
-            code: courseCode,
-            date: courseDate,
-        }
-    )
+    let coursesList = document.getElementsByClassName("coursename")
+    let datesList = document.getElementsByClassName('schoolyear')
+
+    for (let i = 0; i < coursesList.length; i++) {
+        let codeList = coursesList[i].innerHTML;
+        let dateList = datesList[i].innerHTML;
+        dictOfCourses.push(
+            {
+                code: codeList,
+                date: dateList,
+            }
+        )
+    }
 }
-
 //get the inner hmtl values for course list by using queryselector getelements by id and class name
 
 let user_input = prompt("Please enter a 4 digit number");
