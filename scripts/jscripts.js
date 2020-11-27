@@ -1,16 +1,15 @@
-const list_of_courses = [
-    {code: "ACIT 1620",
-    name: "Fundamental Web Techonologies",
-    class_key: 1620},
+const list_of_courses = []
 
-    {code: "COMM 1116",
-    name: "Business Communication",
-    class_key: 1116},
+let createCourseArray  = function(courseCode, courseDate){
+    list_of_courses.push(
+        {
+            code: courseCode,
+            date: courseDate,
+        }
+    )
+}
 
-    {code: "ORGB 1110",
-    name: "Organizational Behavior",
-    class_key: 1110},
-]
+//get the inner hmtl values for course list by using queryselector getelements by id and class name
 
 let user_input = prompt("Please enter a 4 digit number");
 
