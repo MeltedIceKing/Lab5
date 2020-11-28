@@ -26,17 +26,16 @@ let findCourse = (courseListed) => {
 
     for (let i = 0; i < courseListed.length; i++){
         let codeString = courseListed[i].code.substring(5, 9)
+        console.log(codeString)
         if (codeString == user_input) {
             if (i == 0) {
                 document.querySelector('.secone').style.backgroundColor = 'green';
-                break;
             }else if (i == 1) {
                 document.querySelector('.sectwo').style.backgroundColor = 'green';
-                break;
             }else if (i == 2) {
                 document.querySelector('.secthree').style.backgroundColor = 'green';
-                break;
-            }
+                
+            }continue;
         }else {
             courseListed.push(
                 {
@@ -64,8 +63,7 @@ let findCourse = (courseListed) => {
             secNewthree.append(courseListed[3].date);
             divNew.append(secNewthree);
 
-            
-            var sectionNew = document.getElementsByTagName("section");
+            var sectionNew = document.getElementById("bigSection");
             sectionNew.append(divNewtwo)
             sectionNew.append(divNew)
             break;
