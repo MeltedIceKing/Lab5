@@ -1,24 +1,21 @@
 let createCourseArray = () => {
     let dictOfCourses = [];
 
-    let coursesList = document.getElementsByClassName("coursename")
-    let datesList = document.getElementsByClassName('schoolyear')
+    var coursesList = document.getElementsByClassName("coursename")
+    var datesList = document.getElementsByClassName('schoolyear')
 
     for (let i = 0; i < coursesList.length; i++) {
-        let codeList = coursesList[i].innerHTML;
-        console.log(codeList)
-        let dateList = datesList[i].innerHTML;
+        
         dictOfCourses.push(
             {
-                code: codeList,
-                date: dateList,
+                code: coursesList[i].innerHTML,
+                date: datesList[i].innerHTML,
             }
         )
     }
+    console.log(dictOfCourses)
     return dictOfCourses;
 }
-
-let courseList = createCourseArray()
 
 let findCourse = (courseListed) => {
     let user_input = prompt("Please enter a 4 digit number");
@@ -27,14 +24,16 @@ let findCourse = (courseListed) => {
         user_input = prompt("Please enter a  valid 4 digit number");
     }
 
-    for (let j = 0; j < courseListed.length; j++){
-        codeStringList = (courseListed[j].code).split(" ");
-        if (codeStringList[1] == user_input) {
+    for (let i = 0; i < courseListed.length; i++){
+        let codeString = courseListed[i].code.substring(5, 9)
+        if (codeString == user_input) {
             console.log('it worked holy shit')
+            document.querySelector('.coursesection')
         } 
     }
 }
 
+let courseList = createCourseArray()
 findCourse(courseList);
 
 
