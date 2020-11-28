@@ -27,15 +27,19 @@ let findCourse = (courseListed) => {
     for (let i = 0; i < courseListed.length; i++){
         let codeString = courseListed[i].code.substring(5, 9)
         console.log(codeString)
-        if (codeString == user_input) {
-            if (i == 0) {
+        if (user_input == '1620' || user_input == '1116' || user_input == '1110') {
+            if (user_input == '1620') {
                 document.querySelector('.secone').style.backgroundColor = 'green';
-            }else if (i == 1) {
+                break;
+            }else if (user_input == '1116') {
                 document.querySelector('.sectwo').style.backgroundColor = 'green';
-            }else if (i == 2) {
+                break;
+            }else if (user_input == '1110') {
                 document.querySelector('.secthree').style.backgroundColor = 'green';
-                
-            }continue;
+                break;
+            }
+            console.log(i)
+            continue;
         }else {
             courseListed.push(
                 {
