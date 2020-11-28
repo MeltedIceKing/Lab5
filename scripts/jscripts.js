@@ -27,39 +27,51 @@ let findCourse = (courseListed) => {
     for (let i = 0; i < courseListed.length; i++){
         let codeString = courseListed[i].code.substring(5, 9)
         if (codeString == user_input) {
-            console.log('it worked holy shit')
-            document.querySelector('.coursesection')
-        } 
+            if (i == 0) {
+                document.querySelector('.secone').style.backgroundColor = 'green';
+                break;
+            }else if (i == 1) {
+                document.querySelector('.sectwo').style.backgroundColor = 'green';
+                break;
+            }else if (i == 2) {
+                document.querySelector('.secthree').style.backgroundColor = 'green';
+                break;
+            }
+        }else {
+            courseListed.push(
+                {
+                    code: user_input,
+                    date: 'Fall 2020',
+                }
+            )
+
+            var divNewtwo = document.createElement("hr");
+
+            var divNew = document.createElement("section");
+            divNew.classList.add("coursesection");
+            var secNew = document.createElement("section");
+            secNew.classList.add("area1");
+            secNew.append(courseListed[3].code);
+            divNew.append(secNew);
+
+            var secNewtwo = document.createElement("section");
+            secNewtwo.classList.add("area2");
+            secNewtwo.append('N/A');
+            divNew.append(secNewtwo);
+
+            var secNewthree = document.createElement("section");
+            secNewthree.classList.add("area3");
+            secNewthree.append(courseListed[3].date);
+            divNew.append(secNewthree);
+
+            
+            var sectionNew = document.getElementsByTagName("section");
+            sectionNew.append(divNewtwo)
+            sectionNew.append(divNew)
+            break;
+        }
     }
 }
 
 let courseList = createCourseArray()
 findCourse(courseList);
-
-
-// var length_of_courses = list_of_courses.length;
-// console.log(length_of_courses)
-
-// for(var i = 0; i < length_of_courses; i++) {
-//     course_key_number = list_of_courses[i].class_key
-//     console.log(course_key_number)
-//     var initial_boolean = false
-
-//     if (user_input == course_key_number) {
-//         console.log("Yes I am taking the course: " + list_of_courses[i].code + " " + list_of_courses[i].name);
-//         initial_boolean = false
-//         break;
-//     }else if (user_input !== course_key_number) {
-//         initial_boolean = true
-//     }
-// }
-
-// if (initial_boolean === true) {
-//     list_of_courses.push({
-//         code: user_input,
-//         name: null,
-//         class_key: parseInt(user_input)
-//     })
-//     console.log(list_of_courses)
-//     console.log("Succesfully added new course")
-// }
